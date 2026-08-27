@@ -751,7 +751,7 @@ footer.site a:hover{color:var(--gold-bright);}
       </div>
     </div>
     <div class="hero-figure">
-      <div class="photo"><video autoplay muted loop playsinline preload="auto" aria-label="Coach Bru Broussard campaign video"><source src="https://res.cloudinary.com/asd9vjlc/video/upload/f_mp4/v1787831658/0802_2.mp4" type="video/mp4"/><source src="https://res.cloudinary.com/asd9vjlc/video/upload/v1787831658/0802_2.mov" type="video/quicktime"/></video></div>
+      <div class="photo"><video id="heroVid" autoplay loop playsinline preload="auto" volume="1" aria-label="Coach Bru Broussard campaign video"><source src="https://res.cloudinary.com/asd9vjlc/video/upload/f_mp4/v1787831658/0802_2.mp4" type="video/mp4"/><source src="https://res.cloudinary.com/asd9vjlc/video/upload/v1787831658/0802_2.mov" type="video/quicktime"/></video></div>
       <span class="hero-badge"><span class="stars">&#9733;&#9733;&#9733;</span> Leadership &middot; Experience &middot; Commitment</span>
     </div>
   </div>
@@ -791,7 +791,7 @@ footer.site a:hover{color:var(--gold-bright);}
 
 <section class="bg-cream" id="home__about"><div class="wrap">
   <div class="split">
-    <div class="media"><img src="img/profile3.jpeg" alt="Coach Bru Broussard, candidate for Mayor of Opelousas"/></div>
+    <div class="media"><img src="img/meet.jpg" alt="Coach Bru Broussard, Meet the Candidate"/></div>
     <div>
       <span class="eyebrow">Meet the Candidate</span>
       <h2>&ldquo;Coach Bru&rdquo; Broussard Sr.</h2>
@@ -2426,6 +2426,19 @@ document.getElementById('chatClose').addEventListener('click', function(){
     var fill=document.getElementById('home__petFill');
     if(cnt){var n=parseInt(cnt.textContent)+1;cnt.textContent=n;if(fill)fill.style.width=(n/10)+'%';}
   });
+})();
+</script>
+<script>
+(function(){
+  var v=document.getElementById("heroVid");
+  if(!v) return;
+  v.muted=false;
+  v.volume=1;
+  function playSound(){ v.muted=false; v.volume=1; var p=v.play(); if(p) p.catch(function(){}); }
+  playSound();
+  document.addEventListener("click", playSound, {once:true});
+  document.addEventListener("touchstart", playSound, {once:true});
+  document.addEventListener("keydown", playSound, {once:true});
 })();
 </script>
 </body>
